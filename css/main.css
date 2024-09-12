@@ -52,6 +52,11 @@
 
 }
 
+.navbar .links .link > a:hover
+{
+    color: rgb(var(--secondary));
+}
+
 /* hero info */
 .hero-info:before
 {
@@ -83,10 +88,120 @@
     color: rgb(var(--secondary));
 }
 
+.hero-info > ul > li
+{
+    display: flex;
+    gap: 10px;
+}
+/* General styling for the hero section */
+.hero-info > ul {
+    list-style: none;
+}
+
+.hero-info > ul > li {
+    font-size: 2rem;
+    color: rgb(var(--light-text));
+    display: flex;
+    gap: 10px;
+}
+
+.hero-info > ul > li > span {
+    color: rgb(var(--secondary));
+}
+.hero-info > ul > li.social > div
+{
+    display: flex;
+    gap: 25px;
+}
+
+.hero-info > ul > li.social > div > a { color: rgb(var(--light-text)); }
+.hero-info > ul > li.social > div > a:hover { color: rgb(var(--secondary)); }
+
+
+
+/* Name typing effect */
+.hero-info > ul > li.name > p {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid; /* Show the cursor while typing */
+    width: 0;
+    animation: typing-name 3s steps(22) 1s forwards, cursor-hide 0s step-end 3.5s forwards; /* Typing and hiding cursor after */
+}
+
+/* Position typing effect (starts after the name finishes) */
+.hero-info > ul > li.position > p {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    width: 0;
+    opacity: 0; /* Keep the second line hidden initially */
+    animation: show-line 0s linear 4s forwards, typing-position 3s steps(20) 4.5s forwards, blink-cursor 1s step-end infinite 7.5s forwards;
+}
+
+/* Social icons fade-in effect (after typing finishes) */
+.hero-info > ul > li.social > div a {
+    opacity: 0;
+    animation: fade-in 0.5s ease forwards;
+    animation-delay: 8.5s; /* Starts after the position finishes typing */
+}
+
+.hero-info > ul > li.social > div a:nth-child(2) { animation-delay: 8.7s; }
+.hero-info > ul > li.social > div a:nth-child(3) { animation-delay: 8.9s; }
+.hero-info > ul > li.social > div a:nth-child(4) { animation-delay: 9.1s; }
+.hero-info > ul > li.social > div a:nth-child(5) { animation-delay: 9.3s; }
+
+/* Keyframes for name typing */
+@keyframes typing-name {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Keyframes for position typing */
+@keyframes typing-position {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Cursor blink effect */
+@keyframes blink-cursor {
+    0% {border-right: none; }
+    50% { border-right: 2px solid; }
+    100% { border-right: none; }
+}
+
+/* Hide cursor after name typing finishes */
+@keyframes cursor-hide {
+    from { border-right-color: rgba(255, 255, 255, 0.75); }
+    to { border-right-color: transparent; }
+}
+
+/* Show the second line when ready to type */
+@keyframes show-line {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Fade-in effect for social icons */
+@keyframes fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
 .hero-image > img
 {
     width: 100% !important;
+    /*transition: transform 0.3s ease-in-out; !* Smooth transition effect *!*/
+    animation: zoomIn 5s ease-out infinite;
 }
 
-/* end hero section */
+/*.hero-image:hover img {*/
+/*    transform: scale(1.15);*/
+/*}*/
 
+@keyframes zoomIn {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+    100% { transform: scale(1); }
+
+}
+/* end hero section */
