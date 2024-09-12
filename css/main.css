@@ -1,0 +1,92 @@
+:root
+{
+    --primary-1: 0, 27, 40;            /* #001B28 */
+    --primary-2: 0, 46, 68;            /* #002E44 */
+    --secondary: 247, 127, 0;          /* #F77F00 */
+    --neutral-accent: 106, 127, 141;   /* #6A7F8D */
+    --light-text: 224, 230, 234;       /* #E0E6EA */
+    --background-shade: 245, 248, 250; /* #F5F8FA */
+}
+
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* start Hero section */
+#hero
+{
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(var(--primary-1)), rgb(var(--primary-2)));
+}
+
+/* navbar */
+.navbar
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.navbar .logo
+{
+    width: 256px;
+}
+
+.navbar ul.links { list-style: none; }
+
+.navbar .links
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.navbar .links .link > a
+{
+    font-size: 16px;
+    color: rgb(var(--light-text));
+    font-weight: 500;
+
+}
+
+/* hero info */
+.hero-info:before
+{
+    content: "{";
+    font-size: 2rem;
+    color: rgb(var(--secondary));
+
+}
+
+.hero-info:after
+{
+    content: "}";
+    font-size: 2rem;
+    color: rgb(var(--secondary));
+
+}
+
+
+.hero-info > ul { list-style: none; }
+
+.hero-info > ul > li
+{
+    font-size: 2rem;
+    color: rgb(var(--light-text));
+}
+
+.hero-info > ul > li > span
+{
+    color: rgb(var(--secondary));
+}
+
+.hero-image > img
+{
+    width: 100% !important;
+}
+
+/* end hero section */
+
