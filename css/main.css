@@ -103,19 +103,20 @@
     color: rgb(var(--light-text));
     display: flex;
     gap: 10px;
+    width: fit-content;
 }
 
 .hero-info > ul > li > span {
     color: rgb(var(--secondary));
 }
-.hero-info > ul > li.social > div
+.hero-info > ul > li.contact > div
 {
     display: flex;
-    gap: 25px;
+    gap: 30px;
 }
 
-.hero-info > ul > li.social > div > a { color: rgb(var(--light-text)); }
-.hero-info > ul > li.social > div > a:hover { color: rgb(var(--secondary)); }
+.hero-info > ul > li.contact > div > a { color: rgb(var(--light-text)); }
+.hero-info > ul > li.contact > div > a:hover { color: rgb(var(--secondary)); }
 
 
 
@@ -135,20 +136,18 @@
     border-right: 2px solid;
     width: 0;
     opacity: 0; /* Keep the second line hidden initially */
-    animation: show-line 0s linear 4s forwards, typing-position 3s steps(20) 4.5s forwards, blink-cursor 1s step-end infinite 7.5s forwards;
+    animation: show-line 0s linear 4s forwards, typing-position 3s steps(20) 4.5s forwards, blink-cursor 1s step-end infinite 7.5s forwards, cursor-hide 0s step-end 7.5s forwards;
 }
 
-/* Social icons fade-in effect (after typing finishes) */
-.hero-info > ul > li.social > div a {
+/* contact typing effect (starts after contact typing finishes) */
+.hero-info > ul > li.contact > div {
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    width: 0;
     opacity: 0;
-    animation: fade-in 0.5s ease forwards;
-    animation-delay: 8.5s; /* Starts after the position finishes typing */
+    animation: show-line 0s linear 7.5s forwards, typing-social 3s steps(30) 8s forwards, blink-cursor 1s step-end infinite 11s forwards;
 }
-
-.hero-info > ul > li.social > div a:nth-child(2) { animation-delay: 8.7s; }
-.hero-info > ul > li.social > div a:nth-child(3) { animation-delay: 8.9s; }
-.hero-info > ul > li.social > div a:nth-child(4) { animation-delay: 9.1s; }
-.hero-info > ul > li.social > div a:nth-child(5) { animation-delay: 9.3s; }
 
 /* Keyframes for name typing */
 @keyframes typing-name {
@@ -162,9 +161,15 @@
     to { width: 100%; }
 }
 
+/* Keyframes for social links typing */
+@keyframes typing-social {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
 /* Cursor blink effect */
 @keyframes blink-cursor {
-    0% {border-right: none; }
+    0% { border-right: none; }
     50% { border-right: 2px solid; }
     100% { border-right: none; }
 }
@@ -187,6 +192,21 @@
     to { opacity: 1; }
 }
 
+
+/* contact icons fade-in effect (after typing finishes) */
+/*
+.hero-info > ul > li.contact > div a {
+    opacity: 0;
+    animation: fade-in 0.5s ease forwards;
+    animation-delay: 8.5s;
+}
+
+.hero-info > ul > li.contact > div a:nth-child(2) { animation-delay: 8.7s; }
+.hero-info > ul > li.contact > div a:nth-child(3) { animation-delay: 8.9s; }
+.hero-info > ul > li.contact > div a:nth-child(4) { animation-delay: 9.1s; }
+.hero-info > ul > li.contact > div a:nth-child(5) { animation-delay: 9.3s; }
+*/
+
 .hero-image > img
 {
     width: 100% !important;
@@ -200,7 +220,7 @@
 
 @keyframes zoomIn {
     0% { transform: scale(1); }
-    50% { transform: scale(1.15); }
+    50% { transform: scale(1.05); }
     100% { transform: scale(1); }
 
 }
