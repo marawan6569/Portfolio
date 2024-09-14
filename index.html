@@ -56,25 +56,7 @@
         <section id="Projects" style="height: 100vh; background: #F5F8FA"></section>
         <section id="ContactMe" style="height: 100vh; background: #E0E6EA"></section>
 
-    <script>
-        const SideMenuButtons = document.querySelectorAll(".menu-btn");
-        function ToggleSideMenu(){
-            const menu = document.querySelector(".navbar > ul.links");
-            if (menu.classList.contains("closed"))
-            {
-                menu.classList.remove("closed")
-                menu.classList.add("opened")
-            }
-            else
-            {
-                menu.classList.add("closed")
-                menu.classList.remove("opened")
-            }
-        }
-        SideMenuButtons.forEach(btn => {
-            btn.addEventListener("click", ToggleSideMenu)
-        })
-    </script>
+    <script src="js/main.js"></script>
 
     </body>
 </html>
