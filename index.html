@@ -14,16 +14,18 @@
         <section id="hero">
             <nav class="navbar px-3">
                 <img src="images/logo_for_dark.svg" alt="Marwan Fazora logo" class="logo">
-                <ul class="links">
+                <ul class="links closed">
+                    <li class="menu-btn d-md-none close"><i class="fa-solid fa-x"></i></li>
                     <li class="link"><a href="#Home">Home</a></li>
                     <li class="link"><a href="#AboutMe">About Me</a></li>
                     <li class="link"><a href="#Projects">Projects</a></li>
                     <li class="link"><a href="#ContactMe">Contact Me</a></li>
                 </ul>
+                <div class="menu-btn d-md-none open"><i class="fa-solid fa-bars"></i></div>
             </nav>
             <div class="container mt-5">
-                <div class="row">
-                    <div class="col-6 d-flex align-items-center">
+                <div class="row flex-column-reverse flex-md-row">
+                    <div class="col-12 col-md-6 d-flex align-items-center">
                         <div class="hero-info">
                             <ul>
                                 <li class="name"><span>name: </span><p>"Marwan Fazora",</p></li>
@@ -40,7 +42,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="hero-image">
                             <div class="hero-image-border"></div> <!-- The orange border -->
                             <img src="images/hero_image.png" alt="Marwan Fazora image">
@@ -53,5 +55,26 @@
         <section id="AboutMe" style="height: 100vh; background: #E0E6EA"></section>
         <section id="Projects" style="height: 100vh; background: #F5F8FA"></section>
         <section id="ContactMe" style="height: 100vh; background: #E0E6EA"></section>
+
+    <script>
+        const SideMenuButtons = document.querySelectorAll(".menu-btn");
+        function ToggleSideMenu(){
+            const menu = document.querySelector(".navbar > ul.links");
+            if (menu.classList.contains("closed"))
+            {
+                menu.classList.remove("closed")
+                menu.classList.add("opened")
+            }
+            else
+            {
+                menu.classList.add("closed")
+                menu.classList.remove("opened")
+            }
+        }
+        SideMenuButtons.forEach(btn => {
+            btn.addEventListener("click", ToggleSideMenu)
+        })
+    </script>
+
     </body>
 </html>

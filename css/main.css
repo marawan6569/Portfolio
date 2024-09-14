@@ -17,7 +17,7 @@
 /* start Hero section */
 #hero
 {
-    height: 100vh;
+    min-height: 100vh;
     background: linear-gradient(to bottom, rgb(var(--primary-1)), rgb(var(--primary-2)));
 }
 
@@ -192,21 +192,6 @@
     to { opacity: 1; }
 }
 
-
-/* contact icons fade-in effect (after typing finishes) */
-/*
-.hero-info > ul > li.contact > div a {
-    opacity: 0;
-    animation: fade-in 0.5s ease forwards;
-    animation-delay: 8.5s;
-}
-
-.hero-info > ul > li.contact > div a:nth-child(2) { animation-delay: 8.7s; }
-.hero-info > ul > li.contact > div a:nth-child(3) { animation-delay: 8.9s; }
-.hero-info > ul > li.contact > div a:nth-child(4) { animation-delay: 9.1s; }
-.hero-info > ul > li.contact > div a:nth-child(5) { animation-delay: 9.3s; }
-*/
-
 .hero-image > img
 {
     width: 100% !important;
@@ -214,197 +199,6 @@
     filter: drop-shadow(3px 2px 0 #FFF) drop-shadow(-1px -3px 0 #FFF);
     animation: moveShadow 1.5s infinite, zoomIn 3s ease-out infinite;
     /*animation: test5 3s infinite;*/
-}
-
-@keyframes test {
-    0% { filter: drop-shadow(10px -10px #FFF) }
-    1% { filter: drop-shadow(10px -9px #FFF) }
-    2% { filter: drop-shadow(10px -8px #FFF) }
-    3% { filter: drop-shadow(10px -7px #FFF) }
-    4% { filter: drop-shadow(10px -6px #FFF) }
-    5% { filter: drop-shadow(10px -5px #FFF) }
-    6% { filter: drop-shadow(10px -4px #FFF) }
-    8% { filter: drop-shadow(10px -3px #FFF) }
-    9% { filter: drop-shadow(10px -2px #FFF) }
-    9% { filter: drop-shadow(10px -1px #FFF) }
-    10% { filter: drop-shadow(10px 0px #FFF) }
-
-    11% { filter: drop-shadow(9px 1px #FFF) }
-    12% { filter: drop-shadow(8px 2px #FFF) }
-    13% { filter: drop-shadow(7px 3px #FFF) }
-    14% { filter: drop-shadow(6px 4px #FFF) }
-    15% { filter: drop-shadow(5px 5px #FFF) }
-    16% { filter: drop-shadow(4px 6px #FFF) }
-    17% { filter: drop-shadow(3px 7px #FFF) }
-    18% { filter: drop-shadow(2px 8px #FFF) }
-    19% { filter: drop-shadow(1px 9px #FFF) }
-    20% { filter: drop-shadow(0px 10px #FFF) }
-
-    21% { filter: drop-shadow(-1px 9px #FFF) }
-    22% { filter: drop-shadow(-2px 8px #FFF) }
-    23% { filter: drop-shadow(-3px 7px #FFF) }
-    24% { filter: drop-shadow(-4px 6px #FFF) }
-    25% { filter: drop-shadow(-5px 5px #FFF) }
-    26% { filter: drop-shadow(-6px 4px #FFF) }
-    27% { filter: drop-shadow(-7px 3px #FFF) }
-    28% { filter: drop-shadow(-8px 2px #FFF) }
-    29% { filter: drop-shadow(-9px 1px #FFF) }
-    20% { filter: drop-shadow(-10px 0px #FFF) }
-
-    31% { filter: drop-shadow(-9px -1px #FFF) }
-    32% { filter: drop-shadow(-8px -2px #FFF) }
-    33% { filter: drop-shadow(-7px -3px #FFF) }
-    34% { filter: drop-shadow(-6px -4px #FFF) }
-    35% { filter: drop-shadow(-5px -5px #FFF) }
-    36% { filter: drop-shadow(-4px -6px #FFF) }
-    37% { filter: drop-shadow(-3px -7px #FFF) }
-    38% { filter: drop-shadow(-2px -8px #FFF) }
-    39% { filter: drop-shadow(-1px -9px #FFF) }
-    30% { filter: drop-shadow(0px -10px #FFF) }
-
-    100% { filter: drop-shadow(10px -10px #FFF) }
-
-}
-
-@keyframes test2 {
-    0% { filter: drop-shadow(10px -10px #FFF) }
-    1% { filter: drop-shadow(9px -9px #FFF) }
-    2% { filter: drop-shadow(8px -8px #FFF) }
-    3% { filter: drop-shadow(7px -7px #FFF) }
-    4% { filter: drop-shadow(6px -6px #FFF) }
-    5% { filter: drop-shadow(5px -5px #FFF) }
-    6% { filter: drop-shadow(4px -4px #FFF) }
-    8% { filter: drop-shadow(3px -3px #FFF) }
-    9% { filter: drop-shadow(2px -2px #FFF) }
-    9% { filter: drop-shadow(1px -1px #FFF) }
-    10% { filter: drop-shadow(0px 0px #FFF) }
-    11% { filter: drop-shadow(-1px 1px #FFF) }
-    12% { filter: drop-shadow(-2px 2px #FFF) }
-    13% { filter: drop-shadow(-3px 3px #FFF) }
-    14% { filter: drop-shadow(-4px 4px #FFF) }
-    15% { filter: drop-shadow(-5px 5px #FFF) }
-    16% { filter: drop-shadow(-6px 6px #FFF) }
-    17% { filter: drop-shadow(-7px 7px #FFF) }
-    18% { filter: drop-shadow(-8px 8px #FFF) }
-    19% { filter: drop-shadow(-9px 9px #FFF) }
-    20% { filter: drop-shadow(-10px 10px #FFF) }
-    21% { filter: drop-shadow(-9px 9px #FFF) }
-    22% { filter: drop-shadow(-8px 8px #FFF) }
-    23% { filter: drop-shadow(-7px 7px #FFF) }
-    24% { filter: drop-shadow(-6px 6px #FFF) }
-    25% { filter: drop-shadow(-5px 5px #FFF) }
-    26% { filter: drop-shadow(-4px 4px #FFF) }
-    27% { filter: drop-shadow(-3px 3px #FFF) }
-    28% { filter: drop-shadow(-2px 2px #FFF) }
-    29% { filter: drop-shadow(-1px 1px #FFF) }
-    30% { filter: drop-shadow(0px 0px #FFF) }
-    31% { filter: drop-shadow(0px -1px #FFF) }
-    32% { filter: drop-shadow(1px -2px #FFF) }
-    33% { filter: drop-shadow(2px -3px #FFF) }
-    34% { filter: drop-shadow(3px -4px #FFF) }
-    35% { filter: drop-shadow(4px -5px #FFF) }
-    36% { filter: drop-shadow(5px -6px #FFF) }
-    37% { filter: drop-shadow(6px -7px #FFF) }
-    38% { filter: drop-shadow(7px -8px #FFF) }
-    39% { filter: drop-shadow(8px -9px #FFF) }
-    40% { filter: drop-shadow(9px -10px #FFF) }
-    100% { filter: drop-shadow(10px -10px #FFF) }
-
-}
-
-@keyframes test3{
-    0% { filter: drop-shadow(10px -10px #FFF); }
-    5% { filter: drop-shadow(8px -8px #FFF); }
-    10% { filter: drop-shadow(6px -6px #FFF); }
-    15% { filter: drop-shadow(4px -4px #FFF); }
-    20% { filter: drop-shadow(2px -2px #FFF); }
-    25% { filter: drop-shadow(0px 0px #FFF); }
-    30% { filter: drop-shadow(-2px 2px #FFF); }
-    35% { filter: drop-shadow(-4px 4px #FFF); }
-    40% { filter: drop-shadow(-6px 6px #FFF); }
-    45% { filter: drop-shadow(-8px 8px #FFF); }
-    50% { filter: drop-shadow(-10px 10px #FFF); }
-    55% { filter: drop-shadow(-8px 8px #FFF); }
-    60% { filter: drop-shadow(-6px 6px #FFF); }
-    65% { filter: drop-shadow(-4px 4px #FFF); }
-    70% { filter: drop-shadow(-2px 2px #FFF); }
-    75% { filter: drop-shadow(0px 0px #FFF); }
-    80% { filter: drop-shadow(2px -2px #FFF); }
-    85% { filter: drop-shadow(4px -4px #FFF); }
-    90% { filter: drop-shadow(6px -6px #FFF); }
-    95% { filter: drop-shadow(8px -8px #FFF); }
-    100% { filter: drop-shadow(10px -10px #FFF); }
-}
-
-@keyframes test4 {
-    2.5% { filter: drop-shadow(10px -10px #FFF) }
-    5% { filter: drop-shadow(10px -9px #FFF) }
-    7.5% { filter: drop-shadow(10px -8px #FFF) }
-    10% { filter: drop-shadow(10px -7px #FFF) }
-    12.5% { filter: drop-shadow(10px -6px #FFF) }
-    15% { filter: drop-shadow(10px -5px #FFF) }
-    17.5% { filter: drop-shadow(10px -4px #FFF) }
-    20% { filter: drop-shadow(10px -3px #FFF) }
-    22.5% { filter: drop-shadow(10px -2px #FFF) }
-    25% { filter: drop-shadow(10px -1px #FFF) }
-    27.5% { filter: drop-shadow(10px 0px #FFF) }
-    30% { filter: drop-shadow(9px 1px #FFF) }
-    32.5% { filter: drop-shadow(8px 2px #FFF) }
-    35% { filter: drop-shadow(7px 3px #FFF) }
-    37.5% { filter: drop-shadow(6px 4px #FFF) }
-    40% { filter: drop-shadow(5px 5px #FFF) }
-    42.5% { filter: drop-shadow(4px 6px #FFF) }
-    45% { filter: drop-shadow(3px 7px #FFF) }
-    47.5% { filter: drop-shadow(2px 8px #FFF) }
-    50% { filter: drop-shadow(1px 9px #FFF) }
-    52.5% { filter: drop-shadow(0px 10px #FFF) }
-    55% { filter: drop-shadow(-1px 9px #FFF) }
-    57.5% { filter: drop-shadow(-2px 8px #FFF) }
-    60% { filter: drop-shadow(-3px 7px #FFF) }
-    62.5% { filter: drop-shadow(-4px 6px #FFF) }
-    65% { filter: drop-shadow(-5px 5px #FFF) }
-    67.5% { filter: drop-shadow(-6px 4px #FFF) }
-    70% { filter: drop-shadow(-7px 3px #FFF) }
-    72.5% { filter: drop-shadow(-8px 2px #FFF) }
-    75% { filter: drop-shadow(-9px 1px #FFF) }
-    77.5% { filter: drop-shadow(-10px 0px #FFF) }
-    80% { filter: drop-shadow(-9px -1px #FFF) }
-    82.5% { filter: drop-shadow(-8px -2px #FFF) }
-    85% { filter: drop-shadow(-7px -3px #FFF) }
-    87.5% { filter: drop-shadow(-6px -4px #FFF) }
-    90% { filter: drop-shadow(-5px -5px #FFF) }
-    92% { filter: drop-shadow(-4px -6px #FFF) }
-    94% { filter: drop-shadow(-3px -7px #FFF) }
-    95% { filter: drop-shadow(-2px -8px #FFF) }
-    36% { filter: drop-shadow(-1px -9px #FFF) }
-    98% { filter: drop-shadow(0px -10px #FFF) }
-    100% { filter: drop-shadow(10px -10px #FFF) }
-
-}
-
-@keyframes test5 {
-    0% { filter: drop-shadow(10px -10px #FFF) }
-    5% { filter: drop-shadow(8px -8px #FFF) }
-    10% { filter: drop-shadow(6px -6px #FFF) }
-    15% { filter: drop-shadow(4px -4px #FFF) }
-    20% { filter: drop-shadow(2px -2px #FFF) }
-    25% { filter: drop-shadow(0px 0px #FFF) }
-    30% { filter: drop-shadow(-1px 1px #FFF) }
-    35% { filter: drop-shadow(-3px 3px #FFF) }
-    40% { filter: drop-shadow(-5px 5px #FFF) }
-    45% { filter: drop-shadow(-7px 7px #FFF) }
-    50% { filter: drop-shadow(-9px 9px #FFF) }
-    55% { filter: drop-shadow(-10px 10px #FFF) }
-    60% { filter: drop-shadow(-8px 8px #FFF) }
-    65% { filter: drop-shadow(-6px 6px #FFF) }
-    70% { filter: drop-shadow(-4px 4px #FFF) }
-    73% { filter: drop-shadow(-2px 2px #FFF) }
-    75% { filter: drop-shadow(0px 0px #FFF) }
-    80% { filter: drop-shadow(2px -2px #FFF) }
-    85% { filter: drop-shadow(4px -4px #FFF) }
-    90% { filter: drop-shadow(6px -6px #FFF) }
-    95% { filter: drop-shadow(8px -8px #FFF) }
-    100% { filter: drop-shadow(10px -10px #FFF) }
 }
 
 @keyframes moveShadow {
@@ -429,6 +223,74 @@
     0% { transform: scale(1); }
     50% { transform: scale(1.02); }
     100% { transform: scale(1); }
+}
+
+/* end hero section */
+
+
+/* start responsive */
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 576px)
+{
 
 }
-/* end hero section */
+
+/* Small devices (landscape phones, less than 768px) */
+@media (max-width: 768px)
+{
+    /* Nav bar */
+    .navbar { align-items: flex-start }
+    .navbar ul.links
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: center;
+        border-radius: 15px;
+        padding: 15px;
+        background: rgb(0 27 40 / 28%);
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 60vw;
+        height: 100VH;
+        z-index: 1;
+        backdrop-filter: blur(100px);
+
+    }
+
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 992px)
+{
+    /* Nav bar */
+    .navbar .links { gap: 25px;}
+    .navbar .links.closed { display: none; }
+    .navbar .links.opened { display: flex; }
+    .menu-btn i {
+        font-size: 2rem;
+        color: rgb(var(--light-text));
+        cursor: pointer;
+    }
+    .menu-btn i:hover { color: rgb(var(--secondary)) }
+
+    /* Hero Section */
+    .hero-info > ul > li { font-size: 1.5rem }
+}
+
+/* Large devices (desktops, less than 1200px) */
+@media (max-width: 1200px)
+{
+
+}
+
+/* X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1400px)
+{
+
+}
+
+
+/* end responsive */
