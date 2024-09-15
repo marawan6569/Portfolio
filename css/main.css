@@ -194,6 +194,7 @@ body { overflow-x: hidden; }
     to { opacity: 1; }
 }
 
+/* hero image */
 .hero-image > img
 {
     width: 100% !important;
