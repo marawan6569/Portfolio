@@ -231,6 +231,18 @@ body { overflow-x: hidden; }
 /* end hero section */
 
 
+
+/* Start AboutMe Section */
+#AboutMe
+{
+    min-height: 100vh;
+    background-color: rgb(var(--background-shade));
+}
+/* End AboutMe Section */
+
+
+
+
 /* start responsive */
 
 /* X-Small devices (portrait phones, less than 576px) */
