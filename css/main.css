@@ -228,6 +228,22 @@ body { overflow-x: hidden; }
     100% { transform: scale(1); }
 }
 
+/* CAll to Actions (buttons) */
+.btn.secondary-btn
+{
+    color: rgb(var(--light-text));
+    background: rgb(var(--secondary));
+    border: 1px solid rgb(var(--secondary));
+    border-radius: 20px;
+}
+
+.btn.secondary-light-btn
+{
+    color: rgb(var(--light-text));
+    border: 1px solid rgb(var(--secondary));
+    border-radius: 20px;
+}
+
 /* end hero section */
 
 
@@ -238,6 +254,54 @@ body { overflow-x: hidden; }
     min-height: 100vh;
     background-color: rgb(var(--background-shade));
 }
+
+/* About Me Title Styling */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(90deg, rgb(var(--primary-1)),  rgb(var(--primary-2)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-in-out;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 100px;
+    height: 5px;
+    background-color: #F77F00;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+.title {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.5s ease-in-out;
+}
+
+.title.visible {
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* End AboutMe Section */
 
 

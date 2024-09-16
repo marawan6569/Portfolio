@@ -40,3 +40,20 @@ SideMenuButtons.forEach(btn => {
         ToggleSideMenu();
     });
 });
+
+
+// JavaScript to observe scrolling to the "About Me" section
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutMeSection = document.querySelector('#AboutMe .title');
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    });
+
+    observer.observe(aboutMeSection);
+});
+
