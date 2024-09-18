@@ -292,48 +292,16 @@ body { overflow-x: hidden; }
     font-size: 1.5rem;
 }
 
-/* start Mouse tail */
-.cursor-tail {
-    position: absolute;
+#line-canvas {
+    position: fixed;
     top: 0;
     left: 0;
-    pointer-events: none; /* Prevent the tail from interfering with mouse clicks */
-    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0; /* Ensure it’s below the circles */
     mix-blend-mode: screen;
-
 }
-
-.tail-segment {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #F77F00; /* Or any color you want */
-    pointer-events: none; /* Ensure they don't block interaction with other elements */
-    z-index: 9999; /* Ensure they are always on top */
-    transition: transform 0.1s ease-out;
-}
-
-.tail-segment:nth-child(1) { width: 20px; height: 20px;}
-.tail-segment:nth-child(2) { width: 19px; height: 19px;}
-.tail-segment:nth-child(3) { width: 18px; height: 18px;}
-.tail-segment:nth-child(4) { width: 17px; height: 17px;}
-.tail-segment:nth-child(5) { width: 16px; height: 16px;}
-.tail-segment:nth-child(6) { width: 15px; height: 15px;}
-.tail-segment:nth-child(7) { width: 14px; height: 14px;}
-.tail-segment:nth-child(8) { width: 13px; height: 13px;}
-.tail-segment:nth-child(9) { width: 12px; height: 12px;}
-.tail-segment:nth-child(10) { width: 11px; height: 11px;}
-.tail-segment:nth-child(11) { width: 10px; height:10px;}
-.tail-segment:nth-child(12) { width: 9px; height: 9px;}
-.tail-segment:nth-child(13) { width: 8px; height: 8px;}
-.tail-segment:nth-child(14) { width: 7px; height:7px;}
-.tail-segment:nth-child(15) { width: 6px; height: 6px;}
-.tail-segment:nth-child(16) { width: 5px; height: 5px;}
-.tail-segment:nth-child(17) { width: 4px; height: 4px;}
-.tail-segment:nth-child(18) { width: 3px; height: 3px;}
-.tail-segment:nth-child(19) { width: 2px; height: 2px;}
-.tail-segment:nth-child(20) { width: 1px; height: 1px;}
 /* end Mouse tail */
 
 

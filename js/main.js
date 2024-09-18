@@ -59,39 +59,75 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* start Mouse tail */
 
-const cursorTail = document.querySelectorAll('.tail-segment');
-let mouseX = 0, mouseY = 0;
-let tailPositions = Array(cursorTail.length).fill({x: 0, y: 0});
 
-// Function to track mouse movement globally
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
+const numberOfPoints = 8; // Number of points in the tail
+const canvas = document.getElementById('line-canvas');
+const ctx = canvas.getContext('2d');
+
+// Set the canvas size to match the viewport
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Points array to store positions
+const points = [];
+const minLineWidth = 1; // Minimum width of the line
+const maxLineWidth = 10; // Maximum width of the line
+
+// Initialize points array with positions
+for (let i = 0; i < numberOfPoints; i++) {
+    points.push({ x: 0, y: 0 });
+}
+
+let mouseX = 0;
+let mouseY = 0;
+
+// Track mouse movement
+document.addEventListener('mousemove', (event) => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
 });
 
+// Draw lines on the canvas with varying widths
+function drawLines() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+
+    ctx.strokeStyle = '#F77F00'; // Line color
+    ctx.lineCap = 'round'; // Rounded line cap
+
+    for (let i = 1; i < numberOfPoints; i++) {
+        const prevPoint = points[i - 1];
+        const currPoint = points[i];
+
+        // Calculate the line width based on the position
+        const lineWidth = maxLineWidth * ((numberOfPoints - i) / numberOfPoints) + minLineWidth;
+
+        ctx.beginPath();
+        ctx.moveTo(prevPoint.x, prevPoint.y);
+        ctx.lineTo(currPoint.x, currPoint.y);
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+    }
+}
+
+// Animate the points using GSAP
 gsap.ticker.add(() => {
-    // Update the position of the first tail segment based on the current mouse position
-    tailPositions[0] = {x: mouseX, y: mouseY};
+    points[0].x += (mouseX - points[0].x) * 0.2;
+    points[0].y += (mouseY - points[0].y) * 0.2;
 
-    // Update the position of each tail segment based on the previous one
-    for (let i = 1; i < cursorTail.length; i++) {
-        let previous = tailPositions[i - 1];
-        let current = tailPositions[i];
-
-        // Smoothly interpolate the position of each tail segment
-        tailPositions[i] = {
-            x: gsap.utils.interpolate(current.x, previous.x, 0.25),
-            y: gsap.utils.interpolate(current.y, previous.y, 0.25)
-        };
+    // Move each point towards the position of the previous one
+    for (let i = 1; i < numberOfPoints; i++) {
+        points[i].x += (points[i - 1].x - points[i].x) * 0.2;
+        points[i].y += (points[i - 1].y - points[i].y) * 0.2;
     }
 
-    // Apply the updated positions to each tail segment
-    cursorTail.forEach((segment, i) => {
-        gsap.set(segment, {
-            x: tailPositions[i].x,
-            y: tailPositions[i].y
-        });
-    });
+    // Draw the connecting lines
+    drawLines();
+});
+
+// Resize canvas on window resize
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 });
 
 
