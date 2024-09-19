@@ -235,9 +235,6 @@ body { overflow-x: hidden; }
     justify-content: flex-start;
 }
 
-/*#hero .CTA > :first-child { flex-grow: 1; }*/
-/*#hero .CTA > :last-child { flex-grow: 2; }*/
-
 .btn
 {
     position: relative;
@@ -408,7 +405,6 @@ body { overflow-x: hidden; }
     }
     .menu-btn i:hover { color: rgb(var(--secondary)) }
 
-
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -419,6 +415,9 @@ body { overflow-x: hidden; }
 
     /* Hero Section */
     .hero-info > ul > li { font-size: 1.5rem }
+
+    #hero .CTA > .btn:hover > i {left: 25px}
+
 }
 
 /* Large devices (desktops, less than 1200px) */
