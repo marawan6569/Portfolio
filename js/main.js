@@ -132,3 +132,15 @@ window.addEventListener('resize', () => {
 
 
 /* end Mouse tail */
+
+
+document.querySelectorAll('.skill-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        gsap.to(card.querySelector('img'), { scale: 1.2, rotate: 10, duration: 0.5 });
+    });
+
+    card.addEventListener('mouseleave', () => {
+        gsap.to(card.querySelector('img'), { scale: 1, rotate: 0, duration: 0.5 });
+    });
+});
+
