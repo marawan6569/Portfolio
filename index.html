@@ -66,7 +66,7 @@
                 <div class="row justify-content-center"><h1 class="text-center title">About Me</h1></div>
                 <div class="row mt-5">
                     <div class="col-12 col-lg-6 col-xl-4 justify-content-center justify-content-lg-start">
-                        <p>
+                        <p class="text-center text-lg-start">
                             I am Marwan Fazora, a passionate full-stack developer with a strong background in Python, Django, JavaScript, HTML, and CSS. With several years of experience, I specialize in building dynamic and scalable web applications, ensuring efficient and seamless user experiences. My expertise includes both backend development, from database design to API integration, and frontend work, creating visually appealing and interactive interfaces.
                             <br>
                             I thrive in collaborative environments, consistently implementing industry best practices and leveraging Agile methodologies to deliver high-quality solutions. I enjoy solving complex problems, orchestrating flawless project lifecycles, and staying at the forefront of emerging technologies.
@@ -76,28 +76,39 @@
                         </p>
                     </div>
                     <div class="col-12 col-lg-6 col-xl-8 justify-content-center justify-content-lg-start">
-                        <div class="skills-grid">
-                            <div class="skill-card">
-                                <img src="images/python-icon.png" alt="Python Icon">
-                                <h4>Python</h4>
-                                <p>Expert in Python programming and scripting.</p>
+                        <!--TODO:  Add Pretty (Json) View -->
+                        <!--TODO:  Add Visualize View -->
+
+
+                        <div class="skills-container">
+                            <div class="btn-group" role="group" aria-label="Basic example">
+                                <button type="button" class="btn primary-btn raw-btn">Raw</button>
+                                <button type="button" class="btn light-btn pretty-btn">Pretty</button>
+                                <button type="button" class="btn light-btn visualize-btn">Visualize</button>
                             </div>
-                            <div class="skill-card">
-                                <img src="images/django-icon.png" alt="Django Icon">
-                                <h4>Django</h4>
-                                <p>Proficient in building web applications using Django.</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="images/js-icon.png" alt="JavaScript Icon">
-                                <h4>JavaScript</h4>
-                                <p>Skilled in JavaScript for front-end development.</p>
-                            </div>
-                            <div class="skill-card">
-                                <img src="images/git-icon.png" alt="Git Icon">
-                                <h4>Git</h4>
-                                <p>Version control with Git for collaborative coding.</p>
+                            <div class="views">
+                                <div class="view raw opened">
+                                    {
+                                    <br>
+                                    <span>"technologies_frameworks":</span> ["Python", "Django", "Rest Framework", "Django-Celery", "Unit Testing", "JavaScript", "HTML", "CSS", "Bootstrap", "JQuery", "AJAX", "ReactJS (currently learning)", "PHP (used in a basic project)", "Pandas", "NumPy", "PyQt", "SQL"],
+                                    <br>
+                                    <span>"web_software_development":</span> ["Full-Stack Development", "Back-End Web Development", "Web Development", "RESTful API Design"],
+                                    <br>
+                                    <span>"databases":</span> ["MySQL", "MariaDB", "MongoDB", "Redis"],
+                                    <br>
+                                    <span>"tools_technologies":</span> ["Linux", "Docker", "Docker Compose", "Git", "GitHub", "GitHub Actions"],
+                                    <br>
+                                    <span>"other_skill":</span> ["Problem-Solving", "Continuous Learning", "Agile", "Communication", "Time Management", "Critical Thinking"]
+                                    <br>
+                                    }
+                                </div>
+                                <div class="view pretty closed"></div>
+                                <div class="view visualize closed"></div>
                             </div>
                         </div>
+
+
+
                     </div>
                 </div>
             </div>

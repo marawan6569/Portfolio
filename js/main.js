@@ -134,13 +134,71 @@ window.addEventListener('resize', () => {
 /* end Mouse tail */
 
 
-document.querySelectorAll('.skill-card').forEach(card => {
-    card.addEventListener('mouseenter', () => {
-        gsap.to(card.querySelector('img'), { scale: 1.2, rotate: 10, duration: 0.5 });
-    });
+/* start skills */
 
-    card.addEventListener('mouseleave', () => {
-        gsap.to(card.querySelector('img'), { scale: 1, rotate: 0, duration: 0.5 });
-    });
+const rawBtn = document.querySelector('.raw-btn'),
+      prettyBtn = document.querySelector('.pretty-btn'),
+      visualizeBtn = document.querySelector('.visualize-btn');
+
+// Select views
+const rawView = document.querySelector('.views > .view.raw'),
+      prettyView = document.querySelector('.views > .view.pretty'),
+      visualizeView = document.querySelector('.views > .view.visualize');
+
+function resetViews() {
+
+    // Buttons
+    rawBtn.classList.remove('primary-btn');
+    rawBtn.classList.add('light-btn');
+
+    prettyBtn.classList.remove('primary-btn');
+    prettyBtn.classList.add('light-btn');
+
+    visualizeBtn.classList.remove('primary-btn');
+    visualizeBtn.classList.add('light-btn');
+
+    // Views
+    rawView.classList.remove('opened');
+    rawView.classList.add('closed');
+
+    prettyView.classList.remove('opened');
+    prettyView.classList.add('closed');
+
+    visualizeView.classList.remove('opened');
+    visualizeView.classList.add('closed');
+
+}
+
+// Event listeners for buttons
+rawBtn.addEventListener('click', function() {
+    resetViews(); // Reset buttons and views
+    rawBtn.classList.remove('light-btn');
+    rawBtn.classList.add('primary-btn');
+
+    rawView.classList.add('opened');
+    rawView.classList.remove('closed');
+
 });
 
+prettyBtn.addEventListener('click', function() {
+    resetViews();
+    prettyBtn.classList.remove('light-btn');
+    prettyBtn.classList.add('primary-btn');
+
+    prettyView.classList.add('opened');
+    prettyView.classList.remove('closed');
+
+
+});
+
+visualizeBtn.addEventListener('click', function() {
+    resetViews();
+    visualizeBtn.classList.remove('light-btn');
+    visualizeBtn.classList.add('primary-btn');
+
+    visualizeView.classList.add('opened');
+    visualizeView.classList.remove('closed');
+
+
+});
+/* end skills */

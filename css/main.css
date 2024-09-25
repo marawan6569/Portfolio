@@ -16,6 +16,50 @@
 
 body { overflow-x: hidden; }
 
+/* Start General */
+.btn
+{
+    position: relative;
+    font-weight: 500;
+}
+.btn.primary-btn
+{
+    color: rgb(var(--light-text));
+    background: rgb(var(--primary-2));
+}
+
+.btn.light-btn
+{
+    color: rgb(var(--primary-2));
+    background: rgb(var(--background-shade));
+}
+
+.btn.secondary-btn
+{
+    color: rgb(var(--primary-1));
+    background: rgb(var(--secondary));
+    border: 1px solid rgb(var(--secondary));
+}
+
+.btn.secondary-light-btn
+{
+    color: rgb(var(--light-text));
+    border: 1px solid rgb(var(--secondary));
+}
+button.btn.primary-btn:hover,
+button.btn.light-btn:hover
+{
+    color: rgb(var(--secondary));
+}
+
+button.btn.primary-btn:focus,
+button.btn.light-btn:focus{
+    outline: 0;
+    box-shadow: 0 0 0 .25rem rgba(var(--secondary), .25);
+}
+
+/* End General */
+
 /* start Hero section */
 #hero
 {
@@ -234,24 +278,9 @@ body { overflow-x: hidden; }
     gap: 25px;
     justify-content: flex-start;
 }
-
-.btn
-{
-    position: relative;
-    font-weight: 500;
-}
-.btn.secondary-btn
-{
-    color: rgb(var(--primary-1));
-    background: rgb(var(--secondary));
-    border: 1px solid rgb(var(--secondary));
-    border-radius: 20px;
-}
-
+.btn.secondary-btn,
 .btn.secondary-light-btn
 {
-    color: rgb(var(--light-text));
-    border: 1px solid rgb(var(--secondary));
     border-radius: 20px;
     overflow: hidden;
 }
@@ -361,61 +390,62 @@ body { overflow-x: hidden; }
 }
 
 /* Skills */
-
-
-.skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-top: 20px;
+.skills-container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgb(var(--light-text));
+    padding: 2rem;
 }
 
-.skill-card {
-    background-color: #001B28;
-    color: white;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+.skills-container > .btn-group { width: 50%; }
+
+.skills-container .views
+{
+    display: flex;
 }
 
-.skill-card img {
-    width: 80px;
-    height: 80px;
-    transition: transform 0.3s ease;
+.skills-container .views .view
+{
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+
+    background: rgb(var(--background-shade));
+    padding: 1rem;
 }
 
-.skill-card h4 {
-    margin-top: 15px;
-    font-size: 1.2rem;
-    color: #F77F00;
+.skills-container .views .view.raw > span
+{
+    font-size: 1rem;
+    font-weight: 500;
 }
 
-.skill-card p {
-    font-size: 0.9rem;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+
+.skills-container .views
+{
+    display: flex;
+    flex-direction: row;
 }
 
-.skill-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-}
-
-.skill-card:hover img {
-    transform: scale(1.1);
-}
-
-.skill-card:hover p {
+.skills-container .views .view.opened
+{
+    width: 100%;
     opacity: 1;
-    transform: translateY(0);
+    flex-grow: 1;
+    transition: width 0.4s ease;
 }
+.skills-container .views .view.closed
+{
+    width: 0;
+    opacity: 0;
+    flex-grow: 0;
+    padding: 0;
+    transition: width 0.4s ease;
 
-
-
+}
 /* End AboutMe Section */
 
 
